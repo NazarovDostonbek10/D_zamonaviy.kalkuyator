@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+     <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zamonaviy Kalkulyator</title>
+  <meta name="description" content="Oddiy va zamonaviy onlayn kalkulyator. Matematik hisob-kitoblarni tez va qulay bajaring.">
+  <meta name="keywords" content="kalkulyator, online kalkulyator, hisoblash, calculator uz, matematik kalkulyator">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: url("../templates/a1414476.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Mobil uchun qo'shimcha */
+@media (max-width: 600px) {
+  .calc {
+    width: 90%;        /* Ekran bo‘yicha moslashadi */
+    padding: 15px;
+    border-radius: 20px;
+  }
+i
+  .screen {
+    height: 50px;
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  .buttons {
+    gap: 10px;
+  }
+
+  button {
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 12px;
+  }
+
+  .equals {
+    font-size: 20px;
+    padding: 16px;
+  }
+}
+
+    .calc {
+      --bg: none;
+      position: relative;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(10px);
+      padding: 25px;
+      border-radius: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3), 
+                  inset 0 1px 3px rgba(70, 61, 61, 0.5);
+      width: 300px;
+      transition: all 0.3s ease;
+    }
+
+    /* Hover rasm */
+    .calc::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: var(--bg);
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity .25s ease;
+      z-index: 0;
+    }
+    .calc.show-bg::before { opacity: 0.2; }
+
+    .screen {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 60px;
+      width: 284px;
+      font-size: 25px;
+      margin-bottom: 20px;
+      text-align: right;
+      color: #fdfcfc;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      background: #000000;
+      box-shadow: inset 3px 3px 6px #f70303, 
+                  inset -3px -3px 6px #012ffa;
+    }
+
+    .buttons {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    button {
+      padding: 18px;
+      font-size: 20px;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      background: linear-gradient(145deg, #575454, #dbdada);
+      box-shadow: 6px 6px 12px #ff0000, 
+                  -6px -6px 12px #000000;
+      transition: all 0.15s ease;
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 8px 8px 15px #8803b1, 
+                  -8px -8px 15px #02fd02;
+    }
+
+    button:active {
+      transform: translateY(2px);
+      box-shadow: inset 4px 4px 8px #f7f7fa, 
+                  inset -4px -4px 8px #ffffff;
+    }
+
+    .equals {
+      grid-column: span 2;
+      background: linear-gradient(145deg, #010e22, #2825eb);
+      color: white;
+      box-shadow: 6px 6px 12px #070707, 
+                  -6px -6px 12px #fafafa;
+    }
+    .equals:hover {
+      background: linear-gradient(145deg, #ffee00, #050505);
+    }
+
+    .clear {
+      background: linear-gradient(145deg, #022ff8, #ff0202);
+      color: rgb(252, 251, 251);
+      box-shadow: 6px 6px 12px #4c00ff, 
+                  -6px -6px 12px #f50202;
+    }
+    .clear:hover {
+      background: linear-gradient(145deg, #070707, #021bfc);
+    }
+  </style>
+</head>
+<body>
+  <div class="calc" id="calc">
+    <input type="text" id="screen" class="screen" disabled>
+    <div class="buttons">
+      <button onclick="clearScreen()" class="clear">C</button>
+      <button onclick="appendValue('/')">÷</button>
+      <button onclick="appendValue('*')">×</button>
+      <button onclick="appendValue('-')">−</button>
+
+      <!-- Raqamlar (o'z rasm yo'lingni yozasan) -->
+      <button class="num" data-img="img/rasm1.jpg" onclick="appendValue('7')">7</button>
+      <button class="num" data-img="img/rasm2.jpg" onclick="appendValue('8')">8</button>
+      <button class="num" data-img="img/rasm3.jpg" onclick="appendValue('9')">9</button>
+      <button onclick="appendValue('+')">+</button>
+
+      <button class="num" data-img="img/rasm4.jpg" onclick="appendValue('4')">4</button>
+      <button class="num" data-img="img/rasm5.jpg" onclick="appendValue('5')">5</button>
+      <button class="num" data-img="img/rasm6.jpg" onclick="appendValue('6')">6</button>
+      <button onclick="appendValue('.')">.</button>
+<button class="num" data-img="img/rasm7.jpg" onclick="appendValue('1')">1</button>
+      <button class="num" data-img="img/rasm8.jpg" onclick="appendValue('2')">2</button>
+      <button class="num" data-img="img/rasm9.jpg" onclick="appendValue('3')">3</button>
+      <button class="equals" onclick="calculate()">=</button>
+
+      <button class="num" data-img="img/rasm0.jpg" onclick="appendValue('0')" style="grid-column: span 2;">0</button>
+    </div>
+  </div>
+
+  <script>
+    const screen = document.getElementById("screen");
+    const calc = document.getElementById("calc");
+
+    function appendValue(value) { screen.value += value; }
+    function clearScreen() { screen.value = ""; }
+    function calculate() {
+      try { screen.value = eval(screen.value); }
+      catch { screen.value = "Xato!"; }
+    }
+
+    // Hover rasm
+    const numButtons = document.querySelectorAll(".num");
+    numButtons.forEach(btn => {
+      btn.addEventListener("mouseenter", () => {
+        const img = btn.dataset.img || "none";
+        calc.style.setProperty("--bg", url('${img}'));
+        calc.classList.add("show-bg");
+      });
+      btn.addEventListener("mouseleave", () => {
+        calc.classList.remove("show-bg");
+      });
+    });
+  </script>
+</body>
+</html>
