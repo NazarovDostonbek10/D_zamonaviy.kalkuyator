@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="uz">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rus tili kurslarimizga — Reklama</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#0b2a57;
+      --blue:#1f4d8f;
+      --accent:#e63946;
+      --muted:#6b7280;
+      --bg:#ffffff;
+      --dark:#071028;
+    }
+    *{box-sizing:border-box}
+    body{ background: url(".//photo_5321004394713582584_y.jpg") no-repeat center center fixed;
+  background-size: cover; /* Rasm butun sahifaga moslashadi */;margin:0;z-index: 1; font-family:Poppins, Montserrat, system-ui, Arial; background:linear-gradient(180deg,#f7f9fc 0%, #ffffff 100%)}.card{max-width:980px; margin:28px auto; background:var(--bg); border-radius:14px; overflow:hidden; box-shadow:0 18px 40px rgba(2,6,23,.08);}
+.wrap{display:grid; grid-template-columns:1fr 420px; min-height:640px}
+
+/* left content */
+.left{padding:44px 42px; position:relative}
+.ribbon{position:absolute; left:0; top:0; width:68px; height:68px; transform:skewX(-20deg); background:var(--accent); border-bottom-right-radius:14px}
+.heading{color:var(--navy); font-weight:800; font-size:44px; line-height:1}
+.sub{color:var(--blue); font-weight:700; font-size:34px; margin-top:6px}
+.start{color:var(--accent); font-family: 'Montserrat', sans-serif; font-size:29px; margin:18px 0 8px; font-weight:700}
+
+.desc{color:var(--muted); max-width:56ch; margin-top:6px; font-size:15px}
+.bullets{margin-top:18px}
+.bullets ul{list-style:none; padding:0; margin:0; display:grid; gap:12px}
+.bullets li{display:flex; gap:12px; align-items:flex-start}
+.bullets .tick{width:26px;height:26px;background:#12b76a;color:#fff;border-radius:6px;display:grid;place-items:center;font-weight:800}
+
+.cta{margin-top:22px; font-weight:700; color:var(--navy); font-size:19px}
+
+/* right visuals */
+.right{background:linear-gradient(135deg,#f3f7ff 0%, #eef4ff 100%); padding:26px; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:18px}
+.badge{width:160px;height:160px;border-radius:18px;background:#fff;box-shadow:0 8px 24px rgba(8,30,70,.08); display:grid; place-items:center; font-weight:800; color:var(--navy); font-size:20px}
+.photo{width:200px;height:120px;border-radius:12px;background:#fff;border:8px solid #fff; box-shadow:0 10px 40px rgba(8,30,70,.06); display:grid; place-items:center; font-weight:700; color:var(--muted)}
+.angles{position:relative; width:100%; height:100%;}
+.diamond{width:140px;height:140px;background:#fff;border-radius:16px; transform:rotate(45deg); box-shadow:0 8px 30px rgba(8,30,70,.08); display:grid; place-items:center; font-weight:800; color:var(--navy); margin-top:12px}
+.diamond small{transform:rotate(-45deg); display:block; text-align:center}
+
+/* footer band */
+.footer{background:var(--navy); color:#fff; padding:18px 42px; display:flex; justify-content:space-between; align-items:center; gap:16px}
+.social{display:flex; gap:12px; align-items:center}
+.phone{font-weight:700}
+
+.teacher{position:absolute; right:46px; bottom:120px; color:var(--navy); font-weight:700; text-align:right}
+.teacher small{display:block; color:var(--muted); font-weight:600}
+.qachon{
+    margin-top: 20px;
+    font-size: 20px;
+    color: #0026ff;
+}
+
+@media (max-width:900px){
+  .wrap{grid-template-columns:1fr;}
+  .right{order:-1; padding:24px}
+  .teacher{position:static;text-align:left;margin-top:8px}
+}
+#rasim1{
+  width: 2
+}
+
+  </style>
+</head>
+<body> 
+  <article class="card">
+    <div class="wrap">
+      <section class="left">
+        <div class="ribbon" aria-hidden></div>
+        <div class="heading">ЗАНЯТИЯ ДЛЯ ДЕТЕЙ ПО</div>
+        <div class="sub">РУССКОМУ ЯЗЫКУ </div>
+        <div class="start"> Приглашаю детей от 5до 7лет</div><p class="desc">Что вас ждёт на курсе✍:</p>
+
+    <div class="bullets">
+      <ul>
+        <li><span class="tick">✓</span><span style="font-size:18px">°Работа с картинками🧩</span></li>
+        <li><span class="tick">✓</span><span style="font-size:18px">°Устные упражнения для закрепления материала🎗</span></li>
+        <li><span class="tick">✓</span><span style="font-size:18px">°с наглядными материалами 🎨</span></li>
+        <li><span class="tick">✓</span><span style="font-size:18px">°уроки проводятся понятно и интересно⭐️✅ </span></li>
+      </ul>
+    </div>
+
+    <div class="cta">Сделайте первый шаг к своему будущему ⚡</div>
+    <div class="qachon">Занятия проходят 3раза в неделю <br>Старт курса 15 сентября</div>
+<div class="teacher" aria-hidden>
+    </div>
+  </section>
+
+  <aside class="right">
+    <div class="badge" id="rasim1"><img src="./phpll9oCF_2_5276003273118058192_5.jpg" alt="" height="190px">1</div>
+    <div class="diamond"><small><img src="./9619beea-1f45-48ec-b0cb-ba5a24e03dc3__book.png" alt="" height="160px"></small></div>
+    <div class="photo"><img src="./" alt=""></div>
+    <div style="flex:1"></div>
+    <div style="font-weight:700; color:var(--blue); font-size: 20px;">🏠 Ул.Умид Гулшани 5</div>
+  </aside>
+</div>
+
+<div class="footer">
+  <div class="social"><span style="width:60px;height:60px;border-radius:50%;background:#fff;display:inline-grid;place-items:center;color:var(--navy);font-weight:800;font-size:30px">👩‍💼</span><div style="margin-left:5px;font-size:25px">Учительница: Зилола Гайратовна<br><small style="color:#c7d3f0"></small></div></div>
+  <div class="phone"><div style="font-size:18px;font-size:21px">telefon raqam</div><div style="font-size:16px; margin-top:4px; font-size:21px">📞 95 189 16 20</div></div>
+</div>
+
+  </article>
+</body>
+</html>
